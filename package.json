@@ -4,14 +4,10 @@
   "main": "index.js",
   
   "scripts": {
-<<<<<<< HEAD
     "start": "node index.js",
 
     "test": "echo \"Error: no test specified\" && exit 1"
     
-=======
-    "start": "node index.js"
->>>>>>> 1af5e2539e7fdde6cb4fda5ba42d9ad267d1d417
   },
   "keywords": [],
   "author": "",
