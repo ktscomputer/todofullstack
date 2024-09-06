@@ -1,0 +1,64 @@
+<!-- Main view template for displaying and managing todos, including forms for adding todos and displaying existing todos with options to toggle completion and delete -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KT's Hub Task Pro</title>
+    <link rel="stylesheet" href="/style.css"> <!-- Link to the stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Link to Font Awesome for icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Link to Google Fonts for Poppins font -->
+    <link rel="icon" href="/icon.ico" type="image/x-icon"> <!-- Link to the favicon -->
+    
+</head>
+
+<body>
+    <div class="container">
+        <h4 style="text-align: right;margin: 20px 80px;">Welcome, <%= userEmail %></h4>
+        <a href="/logout" class="logout-button">Logout</a> <!-- Link to logout -->
+
+        <h1>Todo App</h1>
+        <!-- Form to add a new todo -->
+        <form id="addTodoForm" onsubmit="addTodo(); return false;">
+            <input type="text" name="description" placeholder="Add new Task" id="todoDescription">
+            <div id="countdownContainer"></div>
+            <div class="datetime-container">
+                <input type="date" name="taskDate" id="taskDate" required>
+                <input type="time" name="taskTime" id="taskTime" required>
+            </div>
+            <button type="submit">Add</button>
+            <p id="errorMessage" style="color: red;"></p>
+        </form>
+
+        <div id="todosContainer">
+            <% if (todos && todos.length> 0) { %> <!-- Check if there are any todos -->
+                <% todos.forEach(todo=> { %> <!-- Loop through each todo -->
+                    <div id="todo-<%= todo._id %>">
+                        <label>
+                            <input type="checkbox" onchange="toggleTodo('<%= todo._id %>', this.checked)"
+                                <%=todo.completed ? 'checked' : '' %> > <!-- Checkbox to toggle todo completion -->
+                            <span class="<%= todo.completed ? 'completed' : '' %>">
+                                <%= todo.description %>
+                            </span> <!-- Todo description with conditional class for completed status -->
+                        </label>
+                        <i class="fas fa-trash delete-icon" onclick="deleteTodo('<%= todo._id %>')"></i>
+                        <!-- Delete icon to remove the todo -->
+
+                    </div>
+                    <% }); %>
+                        <% } else { %>
+                            
+                            <% } %>
+        </div>
+        <p id="noTodos" style="display: none;">No Task found</p> <!-- Message displayed if there are no todos -->
+    </div>
+
+    <script src="/scripts.js"></script>
+    `<%- include('partials/footer') %>`
+</body>
+
+</html>

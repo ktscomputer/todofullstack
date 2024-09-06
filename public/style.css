@@ -1,0 +1,171 @@
+/* Apply Poppins font globally */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color:#e6e7cf;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.container {
+    max-width: 600px;
+    margin: 25px auto;
+    padding: 20px;
+    background-color: #a8cada;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    position: relative;
+}
+
+h1, h2, p {
+    text-align: center;
+    color: #333;
+}
+
+input[type="email"], [type="text"], input[type="password"], button {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input[type="email"]:focus,[type="text"]:focus, input[type="password"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    width:100px
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#todosContainer {
+    margin-top: 20px;
+}
+
+#todosContainer div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    margin: 10px auto;
+    
+    transition: background-color 0.3s;
+    width: 80%;
+}
+
+#todosContainer div:hover {
+    background-color: #f9f9f9;
+}
+
+label {
+    display: flex;
+    align-items: center;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.delete-icon {
+    font-size: 18px; /* Adjust the size here */
+    cursor: pointer;
+    color: #ff4d4d;
+    transition: color 0.3s;
+}
+
+.delete-icon:hover {
+    color: #e60000;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+a {
+    color: #007bff;
+    text-align: center;
+    margin-top: 20px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container-footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+
+/*Logout button*/
+
+.logout-button {
+    position:absolute; /* Absolute positioning within the container */
+    top: 10px; /* Distance from the top */
+    right: 10px; /* Distance from the right */
+    background-color: #f44336; /* Example red background */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Adjust padding as needed */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 12px; /* Font size */
+}
+.logout-button:hover {
+    background-color: #d32f2f; /* Darker red for hover effect */
+    text-decoration: none;
+}
+/* Style for datetime inputs */
+.datetime-container {
+    display: flex;
+    gap: 10px;
+}
+
+/* Style for the clock and countdown */
+.clock-container {
+    margin-top: 20px;
+}
+
+#countdownContainer {
+    margin-top: 20px;
+    color: red;
+    font-weight: bold;
+}
+
+
+
+/* Style for each countdown item */
+.countdown-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Style for task name */
+.countdown-item span:first-child {
+    font-weight: bold;
+}
+
+/* Style for time-up indication */
+.time-up {
+    color: red;
+    font-weight: bold;
+}
+
